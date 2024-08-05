@@ -582,25 +582,27 @@ window.onload = function() {
   let crearCartas = " ";
 
   posts.map(users => {
-    crearCartas += ` <div class="card m-2" style="width: 18rem;">
-                        <img src= ${users.picture.large} class="card-img-top" alt="...">
-
-                           <div class="card-body">
-                             <h5 class="card-title"> ${users.name.title} ${users.name.first} ${users.name.last}</h5>
-                             <p class="card-text">${users.gender}</p>
-                           </div>
-
-                        <ul class="list-group list-group-flush">
-                         <li class="list-group-item">${users.email}</li>
-                         <li class="list-group-item">${users.location.street.number} ${users.location.street.name}</li>
-                         <li class="list-group-item">${users.phone}</li>
-                        </ul>
-
-                      <div class="card-body">
-                        <a href="#" class="card-link">${users.id.name}</a>
-                        <a href="#" class="card-link">${users.id.value}</a>
-                     </div>
-                    </div>`;
+    crearCartas += ` 
+            <div class="card m-2" style="width: 18rem;">
+              <img src= ${users.picture.large} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"> 
+                    ${users.name.title} ${users.name.first} ${users.name.last}
+                </h5>
+                <p class="card-text">${users.gender}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">${users.email}</li>
+                <li class="list-group-item">
+                    ${users.location.street.number} ${users.location.street.name}
+                </li>
+                <li class="list-group-item">${users.phone}</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">${users.id.name}</a>
+                <a href="#" class="card-link">${users.id.value}</a>
+              </div>
+            </div>`;
   });
 
   let cardContainer = document.querySelector(".card-container");
